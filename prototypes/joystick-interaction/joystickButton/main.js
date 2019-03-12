@@ -1,20 +1,13 @@
-//Setup canvas
-/*
-const canvas = document.getElementById("graphics");
-canvas.width = document.documentElement.clientWidth;
-canvas.height = document.documentElement.clientHeight;
-const context = canvas.getContext("2d");
-*/
 //mouse variables
 let mouseX;
 let mouseY;
 
 
 let isMouseOver;
-let button1 = document.getElementById("test1");
-let button2 = document.getElementById("test2");
-let button3 = document.getElementById("test3");
-let button4 = document.getElementById("test4");
+let button1 = document.getElementById("warmestColour");
+let button2 = document.getElementById("warmColour");
+let button3 = document.getElementById("coldColour");
+let button4 = document.getElementById("coldestColour");
 
 button1.addEventListener("mouseover", function(event) {
         //Fill background
