@@ -1,3 +1,4 @@
+
 //mouse variables
 let mouseX;
 let mouseY;
@@ -11,21 +12,25 @@ let button4 = document.getElementById("coldestColour");
 
 button1.addEventListener("mouseover", function(event) {
         //Fill background
-        document.body.style.backgroundColor = "#401201";
+      document.body.style.backgroundColor = "#401201";
+
 });
 
 button2.addEventListener("mouseover", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#73473D";
+document.body.style.backgroundColor = "#73473D";
+
 });
 
 button3.addEventListener("mouseover", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#7B9BA6";
+document.body.style.backgroundColor = "#7B9BA6";
+
 });
 
 button4.addEventListener("mouseover", function(event) {
     //Fill background
+
     document.body.style.backgroundColor = "#EEF4F2";
 });
 

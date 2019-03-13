@@ -1,45 +1,49 @@
-* {
-    /*Reset padding, margin and border on all elements*/
-    padding: 0px;
-    margin: 0px;
-    border: none;
+html{
+  height: 100%;
+  width: 100%;
+}
+/*
+#colorwheel{
+  height: 100%;
+  width: 100%;
+}*/
 
-    /*Hide overflow to remove scroller in browsers*/
-    overflow: hidden;
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #warmestColour {
-    width: 300px;
-    border: 25px;
-    padding: 25px;
-    margin: 25px;
+    width: 150px;
+    height: 150px;
+    padding-top: 100px;
+    padding-left: 100px;
     background-color: #401201;
   }
 
 #warmColour {
-    width: 300px;
-    border: 25px;
-    padding: 25px;
-    margin: 25px;
+  width: 150px;
+  height: 150px;
+  padding-top: 100px;
+  padding-right: 100px;
     background-color: #73473D;
     }
 
 #coldColour {
-    width: 300px;
-    border: 25px;
-    padding: 25px;
-    margin: 25px;
+  width: 150px;
+  height: 150px;
+  padding-bottom: 100px;
+  padding-left: 100px;
     background-color: #7B9BA6;
     }
 
 #coldestColour {
-    width: 300px;
-    border: 25px;
-    padding: 25px;
-    margin: 25px;
+  width: 150px;
+  height: 150px;
+  padding-bottom: 100px;
+  padding-right: 100px;
     background-color: #EEF4F2;
     }
-
-  .p{
-    border-style:double;
-  }
