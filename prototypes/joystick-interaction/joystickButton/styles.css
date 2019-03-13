@@ -2,11 +2,6 @@ html{
   height: 100%;
   width: 100%;
 }
-/*
-#colorwheel{
-  height: 100%;
-  width: 100%;
-}*/
 
 body{
   height: 100%;
@@ -16,6 +11,14 @@ body{
   align-items: center;
 }
 
+/*Not assigned to anything yet, BUT I think this class will be used to make a hidden div*/
+.hideIT{
+  display:flex;
+  width: 450px;
+  height: 450px;
+  visibility: hidden;
+  align-items: right;
+}
 
 #warmestColour {
     width: 150px;
@@ -30,7 +33,7 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-left: 100px;
-    background-color: #73473D;
+  background-color: #73473D;
     }
 
 #coldColour {
@@ -38,7 +41,7 @@ body{
   height: 150px;
   border-top: 100px;
   border-right: 100px;
-    background-color: #7B9BA6;
+  background-color: #7B9BA6;
     }
 
 #coldestColour {
@@ -46,22 +49,5 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-right: 100px;
-    background-color: #EEF4F2;
+  background-color: #EEF4F2;
     }
-
-    #hey{
-      width: 450px;
-      height: 450px;
-    }
-    #hey1{
-      width: 450px;
-      height: 450px;
-    }
-     #hey2{
-          width: 450px;
-          height: 450px;
-        }
-         #hey3{
-              width: 450px;
-              height: 450px;
-            }
