@@ -3,35 +3,43 @@
     padding: 0px;
     margin: 0px;
     border: none;
-    
+
     /*Hide overflow to remove scroller in browsers*/
     overflow: hidden;
 }
 
-#test1 {
+#warmestColour {
     width: 300px;
-    border: 25px solid green;
+    border: 25px;
     padding: 25px;
     margin: 25px;
+    background-color: #401201;
   }
 
-#test2 {
+#warmColour {
     width: 300px;
-    border: 25px solid green;
+    border: 25px;
     padding: 25px;
     margin: 25px;
+    background-color: #73473D;
     }
 
-#test3 {
+#coldColour {
     width: 300px;
-    border: 25px solid green;
+    border: 25px;
     padding: 25px;
     margin: 25px;
+    background-color: #7B9BA6;
     }
 
-#test4 {
+#coldestColour {
     width: 300px;
-    border: 25px solid green;
+    border: 25px;
     padding: 25px;
     margin: 25px;
+    background-color: #EEF4F2;
     }
+
+  .p{
+    border-style:double;
+  }
