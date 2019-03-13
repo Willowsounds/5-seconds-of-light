@@ -1,37 +1,67 @@
-* {
-    /*Reset padding, margin and border on all elements*/
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    
-    /*Hide overflow to remove scroller in browsers*/
-    overflow: hidden;
+html{
+  height: 100%;
+  width: 100%;
+}
+/*
+#colorwheel{
+  height: 100%;
+  width: 100%;
+}*/
+
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#test1 {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
+
+#warmestColour {
+    width: 150px;
+    height: 150px;
+    border-top: 100px;
+    border-left: 100px;
+    background-color: #401201;
   }
 
-#test2 {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
+#warmColour {
+  width: 150px;
+  height: 150px;
+  border-bottom: 100px;
+  border-left: 100px;
+    background-color: #73473D;
     }
 
-#test3 {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
+#coldColour {
+  width: 150px;
+  height: 150px;
+  border-top: 100px;
+  border-right: 100px;
+    background-color: #7B9BA6;
     }
 
-#test4 {
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
-    margin: 25px;
+#coldestColour {
+  width: 150px;
+  height: 150px;
+  border-bottom: 100px;
+  border-right: 100px;
+    background-color: #EEF4F2;
     }
+
+    #hey{
+      width: 450px;
+      height: 450px;
+    }
+    #hey1{
+      width: 450px;
+      height: 450px;
+    }
+     #hey2{
+          width: 450px;
+          height: 450px;
+        }
+         #hey3{
+              width: 450px;
+              height: 450px;
+            }

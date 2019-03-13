@@ -1,5 +1,5 @@
 <!Doctype html>
-<!--Template from Peters lectures in programming 1-->
+<!--Template from Peters lectures in programming 1 but the canvas elements has been removed-->
 <html>
     <head>
     <!--load styles-->
@@ -7,21 +7,29 @@
 
     </head>
 
-    <body>
-        <div>
-        <p id="test1">button1</p>
-        <p id="test2">button2</p>
-        <p id="test3">button3</p>
-        <p id="test4">button4</p>
-        </div>
-        <!--Add canvas element-->
-        <!--<canvas id="graphics">
+    <body id="colorwheel">
 
-        </canvas>
--->
+     <div>
+       <div id="warmestColour"></div>
+       <div id="hey" hidden> </div>
+
+        <div id="warmColour" ></div>
+        <div id="hey1" hidden> </div>
+
+      </div>
+      <div>
+        <div id="coldColour" ></div>
+        <div id="hey2" hidden> </div>
+
+        <div id="coldestColour"></div> </div>
+
+        <div id="hey3" hidden> </div>
+
         <!--load JavaScript-->
         <script src="./main.js"></script>
 
     </body>
 
 </html>
+
+<!--id=colorwheel-->
