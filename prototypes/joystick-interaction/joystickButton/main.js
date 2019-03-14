@@ -40,6 +40,7 @@ button4.addEventListener("mouseover", function(event) {
 button1.addEventListener("mouseclick", function(event) {
     //Fill background
     document.body.style.backgroundColor = "#401201";
+    console.log("button1 clicked!");
 });
 
 button2.addEventListener("mouseclick", function(event) {
