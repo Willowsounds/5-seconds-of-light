@@ -18,12 +18,12 @@ function handleCommand(d) {
     let percent = (controllerValue / 1024) * 100;
     let colorTemperature = calculateColorTemperature(percent);
     let color = calculateRGB(colorTemperature);
-    colorDampened = calculateIntensity(color, Math.max(percent, 50) );
+    let colorDampened = calculateIntensity(color, Math.max(percent, 30) );
     colorDampened = colorTruncate(colorDampened);
     color = colorTruncate(color);
-    wholePageEl.style.backgroundColor = `rgba(${color.r},${color.g},${color.b},255)`;
+    wholePageEl.style.backgroundColor = `rgba(${colorDampened.r},${colorDampened.g},${colorDampened.b},255)`;
 
-    lastMsgEl.innerHTML =  `percent: ${percent} <br>color rgb:  ${color.r} ${color.g} ${color.b} 
+    lastMsgEl.innerHTML =  `percent: ${Math.trunc(percent)} <br>color rgb:  ${color.r} ${color.g} ${color.b} 
                             <br>color2 rgb: ${colorDampened.r} ${colorDampened.g} ${colorDampened.b}`;
     //console.log("percent: " + percent);
     //console.log("color temperature: " + colorTemperature);
