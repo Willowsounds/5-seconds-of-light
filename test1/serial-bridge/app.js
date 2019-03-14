@@ -91,6 +91,9 @@ port.on('error', function(err){
 port.pipe(parser);
 parser.on('data', function(data) {
  console.log("Serial Received: " + data);
+// for ( var i = 0; i < data.length; i++) {
+//     console.log(i + " " + data[i]);
+// }
 
  // Send the text we received on the serial port to all clients
  if (serialWs) {

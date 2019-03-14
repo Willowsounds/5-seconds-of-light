@@ -15,6 +15,8 @@ const int buttonPinA = 2;
 const int buttonPinB = 3;
 const int buttonPinC = 4;
 const int buttonPinD = 5;
+int analogPinA0 = A0;
+int sensorValue = 0;
 
 enum {
   MsgAcknowledge, // 0
@@ -31,7 +33,7 @@ void setup()  {
  pinMode( buttonPinB, INPUT);
  pinMode( buttonPinC, INPUT);
  pinMode( buttonPinD, INPUT);
- 
+ pinMode( analogPinA0, INPUT);
  report(MsgAcknowledge, "Ready");
 } 
 
@@ -59,12 +61,14 @@ void loop() {
       newData = false;
     }
 
-  // Every so often report a fake position
-  if (millis() - lastFakeReport > 2000) {
-    positionValue = digitalRead(buttonPinA);
 
+  // Every so often report a fake position
+  if (millis() - lastFakeReport > 100) {
+    sensorValue = analogRead(analogPinA0);
     
-    report(MsgPosition, positionValue);
+    report(MsgPosition, sensorValue);
+    //console.log(sensorValue);
+//    report(MsgPosition, (random(0,100)));
     lastFakeReport = millis();
         
   }
