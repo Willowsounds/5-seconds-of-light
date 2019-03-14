@@ -3,7 +3,7 @@
 let mouseX;
 let mouseY;
 
-
+let mouseClick;
 let isMouseOver;
 let button1 = document.getElementById("warmestColour");
 let button2 = document.getElementById("warmColour");
@@ -37,7 +37,25 @@ button4.addEventListener("mouseover", function(event) {
     document.body.style.backgroundColor = "#EEF4F2";
 });
 
+button1.addEventListener("mouseclick", function(event) {
+    //Fill background
+    document.body.style.backgroundColor = "#401201";
+});
 
+button2.addEventListener("mouseclick", function(event) {
+    //Fill background
+    document.body.style.backgroundColor = "#73473D";
+});
+
+button3.addEventListener("mouseclick", function(event) {
+    //Fill background
+    document.body.style.backgroundColor = "#7B9BA6";
+});
+
+button4.addEventListener("mouseclick", function(event) {
+    //Fill background
+    document.body.style.backgroundColor = "#EEF4F2";
+});
 
 //handle mouse elements
 function handleMouseMove(event){
@@ -50,6 +68,11 @@ function handleMouseOver(event){
     isMouseOver = false;
 }
 
+function handleMouseClick(event){
+  mouseClick = false;
+}
+
 //set listeners
 document.addEventListener("mouseover", handleMouseOver, false);
 document.addEventListener("mousemove", handleMouseMove, false);
+document.addEventListener("mouseclick", handleMouseClick, false);
