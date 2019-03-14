@@ -11,14 +11,6 @@ body{
   align-items: center;
 }
 
-/*Not assigned to anything yet, BUT I think this class will be used to make a hidden div*/
-.hideIT{
-  display:flex;
-  width: 450px;
-  height: 450px;
-  visibility: hidden;
-  align-items: right;
-}
 
 #warmestColour {
     width: 150px;
