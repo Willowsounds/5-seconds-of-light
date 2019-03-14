@@ -63,7 +63,7 @@ void loop() {
 
 
   // Every so often report a fake position
-  if (millis() - lastFakeReport > 10) {
+  if (millis() - lastFakeReport > 100) {
     sensorValue = analogRead(analogPinA0);
     
     report(MsgPosition, sensorValue);
