@@ -10,32 +10,32 @@ let button3 = document.getElementById("coldColour");
 let button4 = document.getElementById("coldestColour");
 
 /*Colors:
-Warmest: "#401201"
-Warm: "#73473D"
-Cold: "#7B9BA6"
-Coldest: "#EEF4F2"
+Warmest: "hsl(16, 97%, 13%)"
+Warm: "hsl(11, 31%, 35%)"
+Cold: "hsl(195, 19%, 57%)"
+Coldest: "hsl(160, 21%, 95%)"
 */
 
 
 button1.addEventListener("click", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#401201";
+    document.body.style.backgroundColor = "hsl(16, 97%, 13%)";
     console.log("button1 clicked!");
 });
 
 button2.addEventListener("click", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#73473D";
+    document.body.style.backgroundColor = "hsl(11, 31%, 35%)";
 });
 
 button3.addEventListener("click", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#7B9BA6";
+    document.body.style.backgroundColor = "hsl(195, 19%, 57%)";
 });
 
 button4.addEventListener("click", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#EEF4F2";
+    document.body.style.backgroundColor = "hsl(160, 21%, 95%)";
 });
 
 //handle mouse elements
