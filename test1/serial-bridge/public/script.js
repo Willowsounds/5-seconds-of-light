@@ -7,6 +7,7 @@ function handleCommand(d) {
     let hexBlue = range.toString(16);
     let hex = "#ffff"+ addzero(hexBlue);
     document.body.style.backgroundColor = hex;
+    document.body.innerHTML = hex;
 }
 
 function addzero(n){
