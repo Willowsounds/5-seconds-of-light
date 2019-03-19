@@ -2,9 +2,6 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
-   //lastMsgEl.innerHTML =  `text: ${d.text} <br />int: ${d.integer} <br />float: ${d.float}`;
-    let wholePageEl = document.getElementById("wholePage");
-    //console.log("d float " + d.float + '\n');
     let percent = parseInt(d.float/10);
     let range = 150 + percent;
     let hexBlue = range.toString(16);
