@@ -16,6 +16,7 @@ function setBackgroundColor(){
   let hex = "#" + addzero(hexRed) + addzero(hexGreen) + addzero(hexBlue);
   //sets the browsers backgroundcolor to the returned hexadecimal color.
   document.body.style.backgroundColor = hex;
+  console.log(hex);
 }
 /*If the lenght of the returned hexadecimal value is below 2, an extra "0" is added infront
 beacuse a hexadecimal colorvalue is always # followed by 6 letters/numbers.

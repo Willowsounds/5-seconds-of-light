@@ -9,27 +9,29 @@
       <body>
         <script>
           addEventListener("keydown", function(event) {
-            if (event.keyCode == 86)
-              document.body.style.background = "#7B9BA6";
+            // cold -->
             if (event.keyCode == 75)
-                document.body.style.background = "#73473D";
-            if (event.keyCode == 66)
-                document.body.style.background = "#401201";
+              document.body.style.background = "#ffffff";
             if (event.keyCode == 78)
-                document.body.style.background = "#EEF4F2";
+                document.body.style.background = "#ffffdf";
+            if (event.keyCode == 86)
+                document.body.style.background = "#ffffba";
+            if (event.keyCode == 66)
+                document.body.style.background = "#ffff96";
+                //<-- warm
           });
           addEventListener("keyup", function(event) {
-            if (event.keyCode == 86)
-              document.body.style.background = "#7B9BA6";
-
-          if (event.keyCode == 75)
-              document.body.style.background = "#73473D";
-
-          if (event.keyCode == 66)
-              document.body.style.background = "#401201";
+            if (event.keyCode == 75)
+              document.body.style.background = "#ffffff";
 
           if (event.keyCode == 78)
-              document.body.style.background = "#EEF4F2";
+              document.body.style.background = "#ffffdf";
+
+          if (event.keyCode == 86)
+              document.body.style.background = "#ffffba";
+
+          if (event.keyCode == 66)
+              document.body.style.background = "#ffff96";
           });
         console.log("keydown");
 

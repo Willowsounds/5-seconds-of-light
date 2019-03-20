@@ -20,22 +20,22 @@ Coldest: "#EEF4F2"
 // Event listeners for all of the different buttons
 button1.addEventListener("mouseover", function(event) {
       //Fill background
-      document.body.style.backgroundColor = "#401201";
+      document.body.style.backgroundColor = "#ffff96";
 });
 
 button2.addEventListener("mouseover", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#73473D";
+    document.body.style.backgroundColor = "#ffffba";
 });
 
 button3.addEventListener("mouseover", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#7B9BA6";
+    document.body.style.backgroundColor = "#ffffdf";
 });
 
 button4.addEventListener("mouseover", function(event) {
     //Fill background
-    document.body.style.backgroundColor = "#EEF4F2";
+    document.body.style.backgroundColor = "#ffffff";
 });
 
 
@@ -54,4 +54,4 @@ function handleMouseOver(event){
 //set listeners
 document.addEventListener("mouseover", handleMouseOver, false);
 document.addEventListener("mousemove", handleMouseMove, false);
-document.addEventListener("mouseclick", handleMouseClick, false);
+//document.addEventListener("mouseclick", handleMouseClick, false);

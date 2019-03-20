@@ -22,7 +22,11 @@ body{
     height: 150px;
     border-top: 100px;
     border-left: 100px;
-    background-color: #401201;
+    background-color: #ffff96;
+  }
+  #warmestColour :hover{
+    box-shadow: inset 0 0 0 3px #3a7999;
+
   }
 
 #warmColour {
@@ -30,7 +34,7 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-left: 100px;
-  background-color: #73473D;
+  background-color: #ffffba;
     }
 
 #coldColour {
@@ -38,7 +42,7 @@ body{
   height: 150px;
   border-top: 100px;
   border-right: 100px;
-  background-color: #7B9BA6;
+  background-color: #ffffdf;
     }
 
 #coldestColour {
@@ -46,5 +50,5 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-right: 100px;
-  background-color: #EEF4F2;
+  background-color: #ffffff;
     }
