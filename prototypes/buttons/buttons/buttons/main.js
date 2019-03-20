@@ -52,5 +52,3 @@ function handleMouseOver(event){
 //set listeners
 document.addEventListener("mouseover", handleMouseOver, false);
 document.addEventListener("mousemove", handleMouseMove, false);*/
-
-
