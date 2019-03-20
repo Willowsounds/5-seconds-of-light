@@ -1,0 +1,54 @@
+<!Doctype html>
+<!--Template from Peters lectures in programming 1-->
+<html>
+    <head>
+    <!--load styles-->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
+    </head>
+
+    <body>
+            <p>This page turns violet when you hold the V key.</p>
+            <script>
+              addEventListener("keydown", function(event) {
+                if (event.keyCode == 86)
+                  document.body.style.background = "#7B9BA6";
+                if (event.keyCode == 75)
+                    document.body.style.background = "#73473D";
+                if (event.keyCode == 66)
+                    document.body.style.background = "#401201";
+                if (event.keyCode == 78)
+                    document.body.style.background = "#EEF4F2";
+              });
+              addEventListener("keyup", function(event) {
+                if (event.keyCode == 86)
+                  document.body.style.background = "#7B9BA6";
+             
+              if (event.keyCode == 75)
+                  document.body.style.background = "#73473D";
+             
+              if (event.keyCode == 66)
+                  document.body.style.background = "#401201";
+             
+              if (event.keyCode == 78)
+                  document.body.style.background = "#EEF4F2";
+              });
+            console.log("keydown");
+            </script>
+        <!--load styles   
+        <div>
+        <p id="test1">button1</p>
+        <p id="test2">button2</p>VVVVVVV
+        <p id="test3">button3</p>
+        <p id="test4">button4</p>
+        </div>
+        <Add canvas element-->
+        <!--<canvas id="graphics">
+        </canvas>
+-->
+        <!--load JavaScript-->
+        <script src="./main.js"></script>
+
+    </body>
+
+</html>

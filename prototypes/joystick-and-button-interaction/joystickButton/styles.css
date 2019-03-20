@@ -16,21 +16,13 @@ body{
   align-items: center;
 }
 
-/*Not assigned to anything yet, BUT I think this class will be used to make a hidden div*/
-/*.hideIT{
-  display:flex;
-  width: 450px;
-  height: 450px;
-  visibility: hidden;
-  align-items: right;
-} */
 
 #warmestColour {
     width: 150px;
     height: 150px;
     border-top: 100px;
     border-left: 100px;
-    background-color:hsl(16, 97%, 13%);
+    background-color: #401201;
   }
 
 #warmColour {
@@ -38,8 +30,7 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-left: 100px;
-  background-color:hsl(11, 31%, 35%);
-
+  background-color: #73473D;
     }
 
 #coldColour {
@@ -47,7 +38,7 @@ body{
   height: 150px;
   border-top: 100px;
   border-right: 100px;
-  background-color:hsl(195, 19%, 57%)
+  background-color: #7B9BA6;
     }
 
 #coldestColour {
@@ -55,5 +46,5 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-right: 100px;
-  background-color:hsl(160, 21%, 95%)
+  background-color: #EEF4F2;
     }
