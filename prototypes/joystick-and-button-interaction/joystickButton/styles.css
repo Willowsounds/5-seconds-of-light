@@ -1,0 +1,50 @@
+* {
+    /*Hide overflow to remove scroller in browsers*/
+    overflow: hidden;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#warmestColour {
+    width: 150px;
+    height: 150px;
+    border-top: 100px;
+    border-left: 100px;
+    background-color: #401201;
+  }
+
+#warmColour {
+  width: 150px;
+  height: 150px;
+  border-bottom: 100px;
+  border-left: 100px;
+  background-color: #73473D;
+    }
+
+#coldColour {
+  width: 150px;
+  height: 150px;
+  border-top: 100px;
+  border-right: 100px;
+  background-color: #7B9BA6;
+    }
+
+#coldestColour {
+  width: 150px;
+  height: 150px;
+  border-bottom: 100px;
+  border-right: 100px;
+  background-color: #EEF4F2;
+    }

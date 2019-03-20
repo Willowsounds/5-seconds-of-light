@@ -1,0 +1,58 @@
+<!Doctype html>
+<!--Template from Peters lectures in programming 1 but the canvas elements has been removed-->
+<html>
+    <head>
+    <!--load styles-->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    </head>
+
+      <body>
+        <script>
+          addEventListener("keydown", function(event) {
+            if (event.keyCode == 86)
+              document.body.style.background = "#7B9BA6";
+            if (event.keyCode == 75)
+                document.body.style.background = "#73473D";
+            if (event.keyCode == 66)
+                document.body.style.background = "#401201";
+            if (event.keyCode == 78)
+                document.body.style.background = "#EEF4F2";
+          });
+          addEventListener("keyup", function(event) {
+            if (event.keyCode == 86)
+              document.body.style.background = "#7B9BA6";
+
+          if (event.keyCode == 75)
+              document.body.style.background = "#73473D";
+
+          if (event.keyCode == 66)
+              document.body.style.background = "#401201";
+
+          if (event.keyCode == 78)
+              document.body.style.background = "#EEF4F2";
+          });
+        console.log("keydown");
+
+        </script>
+        <div>
+          <div id="warmestColour"></div>
+          <div id="coldColour" ></div>
+        </div>
+
+         <div>
+          <div id="warmColour" ></div>
+          <div id="coldestColour"></div>
+        </div>
+
+    <!--  <div class="hideIT"> </div> -->
+
+
+
+        <!--load JavaScript-->
+        <script src="./main.js"></script>
+
+    </body>
+
+</html>
+
+<!--id=colorwheel-->
