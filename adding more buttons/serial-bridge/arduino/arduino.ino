@@ -17,6 +17,9 @@ const int buttonPinC = 4;
 const int buttonPinD = 5;
 int analogPinA0 = A0;
 int sensorValue = 0;
+int sensorValue2 = 0;
+int sensorValue3 = 0;
+int sensorValue4 = 0;
 
 enum {
   MsgAcknowledge, // 0
@@ -65,8 +68,16 @@ void loop() {
   // Every so often report a fake position
   if (millis() - lastFakeReport > 100) {
     sensorValue = analogRead(analogPinA0);
+
+    //if we want to read values from buttons
+    sensorValue = digitalRead(buttonPinA);
+    sensorValue2 = digitalRead(buttonPinB);
+    sensorValue3 = digitalRead(buttonPinC);
+    sensorValue4 = digitalRead(buttonPinD);
+
+
     
-    report(MsgPosition, sensorValue);
+    report(MsgPosition, sensorValue, sensorValue2, sensorValue3, sensorValue4);
     //console.log(sensorValue);
 //    report(MsgPosition, (random(0,100)));
     lastFakeReport = millis();
@@ -85,12 +96,23 @@ void report(int code, const char *message) {
   Serial.flush();
 }
 
-void report(int code, int message) {
+void report(int code, int val1, int val2, int val3, int val4) {
   Serial.print("<");
   Serial.print("ws-bridge,");
   Serial.print(code);
   Serial.print(",");
-  Serial.print(message);
+  Serial.print(val1);
+
+  Serial.print(",");
+  Serial.print(val2);
+
+  Serial.print(",");
+  Serial.print(val3);
+
+  Serial.print(",");
+  Serial.print(val4);
+
+  
   Serial.print(">\r\n");
   Serial.flush();
 }

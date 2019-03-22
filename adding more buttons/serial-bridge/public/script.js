@@ -2,9 +2,9 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
-    let percent = parseInt(d.float/10);
-    let range = 150 + percent;
-    let hexBlue = range.toString(16);
+    let percent = parseInt(d.float/10); //if we use buttons, then parseInt(d.float);
+    let range = 150 + percent;          //if (d.float === 0); then do this    
+    let hexBlue = range.toString(16);   //else; do that 
     let hex = "#ffff"+ addzero(hexBlue);
     document.body.style.backgroundColor = hex;
     document.body.innerHTML = hex;
