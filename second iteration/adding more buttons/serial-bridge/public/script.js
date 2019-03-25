@@ -11,30 +11,31 @@ function handleCommand(d) {
     let b_two = parseInt(d.button2);
     let b_three = parseInt(d.button3);
     let b_four = parseInt(d.button4);
-    let hex;
-
+    console.log(b_one);
     /*Colors in hex
     #ffff96
     #ffffba
     #ffffdf
     #ffffff
     */
-    
-    if (b_one == 1){
-      hex = #ffff96;
-    }
-    if (b_two == 1){
-      hex = #ffffba
-    }
-    if (b_two == 1){
-      hex = #ffffdf
-    }
-    if (b_two == 1){
-      hex = #ffffff
-    }
 
-    document.body.style.backgroundColor = hex;
-    document.body.innerHTML = hex;
+    if (b_one === 1){
+      document.body.style.backgroundColor = '#ffff96';
+      document.body.innerHTML = '#ffff96';
+      console.log('Hej knapp ett');
+    }
+    if (b_two === 1){
+      document.body.style.backgroundColor = '#ffffba';
+      document.body.innerHTML = '#ffffba';
+    }
+    if (b_two === 1){
+      document.body.style.backgroundColor = '#fffffd';
+      document.body.innerHTML = '#fffffd';
+    }
+    if (b_two === 1){
+      document.body.style.backgroundColor = '#ffffff';
+      document.body.innerHTML = '#ffffff';
+    }
 }
 
 /*
@@ -60,9 +61,9 @@ function onDocumentReady() {
             //${
             // Looks legit
             d = d.split(',');
-            if (d.length == 5) { // Yes, it has three components as we hoped
+            if (d.length == 4) { // Yes, it has four components as we hoped (changed from the original code)
                 handleCommand({
-                    text:d[0].substr(1),
+                    //text:d[0].substr(1),
                     button1: parseInt(d[1]),
                     button2: parseFloat(d[2]),
                     button3: parseFloat(d[3]),
