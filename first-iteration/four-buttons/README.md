@@ -1,1 +1,1 @@
-
+This is a digital prototype using a serial bridge tutorial to get a data from the buttons to the browser. Depending on which one out of 4 buttons is pressed, the color simulating different light setups will change on the screen.
