@@ -2,18 +2,46 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
-    let percent = parseInt(d.float/10); //if we use buttons, then parseInt(d.float);
-    let range = 150 + percent;          //if (d.float === 0); then do this    
-    let hexBlue = range.toString(16);   //else; do that 
-    let hex = "#ffff"+ addzero(hexBlue);
+
+    /*let percent = parseInt(d.float/10); //if we use buttons, then parseInt(d.float);
+    let range = 150 + percent;          //if (d.float === 0); then do this
+    let hexBlue = range.toString(16);   //else; do that
+    let hex = "#ffff"+ addzero(hexBlue); */
+    let b_one = parseInt(d.button1);
+    let b_two = parseInt(d.button2);
+    let b_three = parseInt(d.button3);
+    let b_four = parseInt(d.button4);
+    let hex;
+
+    /*Colors in hex
+    #ffff96
+    #ffffba
+    #ffffdf
+    #ffffff
+    */
+    
+    if (b_one == 1){
+      hex = #ffff96;
+    }
+    if (b_two == 1){
+      hex = #ffffba
+    }
+    if (b_two == 1){
+      hex = #ffffdf
+    }
+    if (b_two == 1){
+      hex = #ffffff
+    }
+
     document.body.style.backgroundColor = hex;
     document.body.innerHTML = hex;
 }
 
+/*
 function addzero(n){
   return (n.length<2) ? "0"+n : n;
 }
-
+*/
 
 function onDocumentReady() {
     var socket = new ReconnectingWebsocket("ws://" + location.host + "/serial");
@@ -32,11 +60,13 @@ function onDocumentReady() {
             //${
             // Looks legit
             d = d.split(',');
-            if (d.length == 3) { // Yes, it has three components as we hoped
+            if (d.length == 5) { // Yes, it has three components as we hoped
                 handleCommand({
                     text:d[0].substr(1),
-                    integer: parseInt(d[1]),
-                    float: parseFloat(d[2])
+                    button1: parseInt(d[1]),
+                    button2: parseFloat(d[2]),
+                    button3: parseFloat(d[3]),
+                    button4: parseFloat(d[4])
                 });
 //                var buttonValue = parseInt(d[2]);
 //                float: parseFloat(d[2].substr(0,d.length-1))
