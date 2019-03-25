@@ -19,20 +19,36 @@ function handleCommand(d) {
     */
 
     if (b_one === 1){
-      document.body.style.backgroundColor = '#ffff96';
-      document.body.innerHTML = '#ffff96';
+      /*document.body.style.backgroundColor = '#ffff96';
+      document.body.innerHTML = '#ffff96'; */
+      document.getElementById("div_one").style.backgroundColor = '#ffff96';
+      document.getElementById("div_two").style.backgroundColor = '#000000';
+      document.getElementById("div_three").style.backgroundColor = '#000000';
+      document.getElementById("div_four").style.backgroundColor = '#000000	';
     }
     if (b_two === 1){
-      document.body.style.backgroundColor = '#ffffba';
-      document.body.innerHTML = '#ffffba';
+    /*  document.body.style.backgroundColor = '#ffffba';
+      document.body.innerHTML = '#ffffba'; */
+      document.getElementById("div_one").style.backgroundColor = '#ffff96';
+      document.getElementById("div_two").style.backgroundColor = '#ffffba';
+      document.getElementById("div_three").style.backgroundColor = '#000000';
+      document.getElementById("div_four").style.backgroundColor = '#000000';
     }
     if (b_three === 1){
-      document.body.style.backgroundColor = '#fffffd';
-      document.body.innerHTML = '#fffffd';
+    /*  document.body.style.backgroundColor = '#fffffd';
+      document.body.innerHTML = '#fffffd'; */
+      document.getElementById("div_one").style.backgroundColor = '#ffff96';
+      document.getElementById("div_two").style.backgroundColor = '#ffffba';
+      document.getElementById("div_three").style.backgroundColor = '#fffffd';
+      document.getElementById("div_four").style.backgroundColor = '#000000';
     }
     if (b_four === 1){
-      document.body.style.backgroundColor = '#ffffff';
-      document.body.innerHTML = '#ffffff';
+    /*  document.body.style.backgroundColor = '#ffffff';
+      document.body.innerHTML = '#ffffff'; */
+      document.getElementById("div_one").style.backgroundColor = '#ffff96';
+      document.getElementById("div_two").style.backgroundColor = '#ffffba';
+      document.getElementById("div_three").style.backgroundColor = '#fffffd';
+      document.getElementById("div_four").style.backgroundColor = '#ffffff';
     }
 }
 
