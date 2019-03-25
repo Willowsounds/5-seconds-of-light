@@ -1,3 +1,3 @@
 Hello
 
-![alt text](Ard.sche.png "Description goes here")
+![alt text](Ard-sche.png "Description goes here")
