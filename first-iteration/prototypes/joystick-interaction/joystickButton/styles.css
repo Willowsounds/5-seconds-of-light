@@ -22,7 +22,7 @@ body{
     height: 150px;
     border-top: 100px;
     border-left: 100px;
-    background-color: #401201;
+    background-color: hsl(16.2, 96.9%, 12.7%);
   }
 
 #warmColour {
@@ -30,7 +30,7 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-left: 100px;
-  background-color: #73473D;
+  background-color:hsl(11.1, 30.7%, 34.5%);
     }
 
 #coldColour {
@@ -38,7 +38,7 @@ body{
   height: 150px;
   border-top: 100px;
   border-right: 100px;
-  background-color: #7B9BA6;
+  background-color: hsl(195.3, 19.5%, 56.7%);
     }
 
 #coldestColour {
@@ -46,5 +46,5 @@ body{
   height: 150px;
   border-bottom: 100px;
   border-right: 100px;
-  background-color: #EEF4F2;
+  background-color: hsl(160, 21.4%, 94.5%);
     }
