@@ -1,10 +1,17 @@
+# changes
+
+Added functionality that changes the backgroundcolor
+between 4 stages of warm to cold light depending on
+the horizontal orientation of the connected mobile
+device.
+
 # motion-stream
 
 This example streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client.
 
 It's [also available on Glitch](https://glitch.com/edit/#!/remix/ch-motion-data)
 
-# Setup 
+# Setup
 
 In the directory you've got this sample:
 
