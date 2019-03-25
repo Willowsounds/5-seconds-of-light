@@ -8,30 +8,30 @@
     </head>
 
     <body>
-            <p>This page turns violet when you hold the V key.</p>
+            <p>Press buttons or pedals to switch to different light settings</p>
             <script>
               addEventListener("keydown", function(event) {
-                if (event.keyCode == 86)
-                  document.body.style.background = "#7B9BA6";
-                if (event.keyCode == 75)
-                    document.body.style.background = "#73473D";
-                if (event.keyCode == 66)
-                    document.body.style.background = "#401201";
-                if (event.keyCode == 78)
-                    document.body.style.background = "#EEF4F2";
+                if (event.keyCode == 86) //V
+                  document.body.style.background = "#0B1429";
+                if (event.keyCode == 75) //K
+                    document.body.style.background = "#e5e5ff";
+                if (event.keyCode == 66) //B
+                    document.body.style.background = "#FDC498";
+                if (event.keyCode == 78) //N
+                    document.body.style.background = "#FFFF96";
               });
               addEventListener("keyup", function(event) {
-                if (event.keyCode == 86)
-                  document.body.style.background = "#7B9BA6";
+                if (event.keyCode == 86) //V
+                  document.body.style.background = "#0B1429";
              
-              if (event.keyCode == 75)
-                  document.body.style.background = "#73473D";
+              if (event.keyCode == 75) //K
+                  document.body.style.background = "#e5e5ff";
              
-              if (event.keyCode == 66)
-                  document.body.style.background = "#401201";
+              if (event.keyCode == 66) //B
+                  document.body.style.background = "#FDC498";
              
-              if (event.keyCode == 78)
-                  document.body.style.background = "#EEF4F2";
+              if (event.keyCode == 78) //N
+                  document.body.style.background = "#FFFF96";
               });
             console.log("keydown");
 
