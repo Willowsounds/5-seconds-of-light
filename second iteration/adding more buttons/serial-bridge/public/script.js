@@ -2,18 +2,45 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
-    let percent = parseInt(d.float/10); //if we use buttons, then parseInt(d.float);
-    let range = 150 + percent;          //if (d.float === 0); then do this    
-    let hexBlue = range.toString(16);   //else; do that 
-    let hex = "#ffff"+ addzero(hexBlue);
-    document.body.style.backgroundColor = hex;
-    document.body.innerHTML = hex;
+
+    /*let percent = parseInt(d.float/10); //if we use buttons, then parseInt(d.float);
+    let range = 150 + percent;          //if (d.float === 0); then do this
+    let hexBlue = range.toString(16);   //else; do that
+    let hex = "#ffff"+ addzero(hexBlue); */
+    let b_one = parseFloat(d.button1);
+    let b_two = parseFloat(d.button2);
+    let b_three = parseFloat(d.button3);
+    let b_four = parseFloat(d.button4);
+    /*Colors in hex
+    #ffff96
+    #ffffba
+    #ffffdf
+    #ffffff
+    */
+
+    if (b_one === 1){
+      document.body.style.backgroundColor = '#ffff96';
+      document.body.innerHTML = '#ffff96';
+    }
+    if (b_two === 1){
+      document.body.style.backgroundColor = '#ffffba';
+      document.body.innerHTML = '#ffffba';
+    }
+    if (b_three === 1){
+      document.body.style.backgroundColor = '#fffffd';
+      document.body.innerHTML = '#fffffd';
+    }
+    if (b_four === 1){
+      document.body.style.backgroundColor = '#ffffff';
+      document.body.innerHTML = '#ffffff';
+    }
 }
 
+/*
 function addzero(n){
   return (n.length<2) ? "0"+n : n;
 }
-
+*/
 
 function onDocumentReady() {
     var socket = new ReconnectingWebsocket("ws://" + location.host + "/serial");
@@ -32,11 +59,13 @@ function onDocumentReady() {
             //${
             // Looks legit
             d = d.split(',');
-            if (d.length == 3) { // Yes, it has three components as we hoped
+            if (d.length == 6) { // Yes, it has six components as we hoped (changed from the original code)
                 handleCommand({
-                    text:d[0].substr(1),
-                    integer: parseInt(d[1]),
-                    float: parseFloat(d[2])
+                    //text:d[0].substr(1),
+                    button1: parseFloat(d[2]),
+                    button2: parseFloat(d[3]),
+                    button3: parseFloat(d[4]),
+                    button4: parseFloat(d[5])
                 });
 //                var buttonValue = parseInt(d[2]);
 //                float: parseFloat(d[2].substr(0,d.length-1))
