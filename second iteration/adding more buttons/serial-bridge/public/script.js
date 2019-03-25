@@ -7,16 +7,19 @@ function handleCommand(d) {
     let range = 150 + percent;          //if (d.float === 0); then do this
     let hexBlue = range.toString(16);   //else; do that
     let hex = "#ffff"+ addzero(hexBlue); */
-    let b_one = parseFloat(d.button1);
-    let b_two = parseFloat(d.button2);
-    let b_three = parseFloat(d.button3);
-    let b_four = parseFloat(d.button4);
+    let b_one = parseInt(d.button1);
+    let b_two = parseInt(d.button2);
+    let b_three = parseInt(d.button3);
+    let b_four = parseInt(d.button4);
+    let hex;
+
     /*Colors in hex
     #ffff96
     #ffffba
     #ffffdf
     #ffffff
     */
+<<<<<<< HEAD
 
     if (b_one === 1){
       /*document.body.style.backgroundColor = '#ffff96';
@@ -49,7 +52,24 @@ function handleCommand(d) {
       document.getElementById("div_two").style.backgroundColor = '#ffffba';
       document.getElementById("div_three").style.backgroundColor = '#fffffd';
       document.getElementById("div_four").style.backgroundColor = '#ffffff';
+=======
+    
+    if (b_one == 1){
+      hex = #ffff96;
     }
+    if (b_two == 1){
+      hex = #ffffba
+    }
+    if (b_two == 1){
+      hex = #ffffdf
+    }
+    if (b_two == 1){
+      hex = #ffffff
+>>>>>>> 3c6f9d1099b3b157b9dbe395ec0d81bd6e5ba91d
+    }
+
+    document.body.style.backgroundColor = hex;
+    document.body.innerHTML = hex;
 }
 
 /*
@@ -75,13 +95,13 @@ function onDocumentReady() {
             //${
             // Looks legit
             d = d.split(',');
-            if (d.length == 6) { // Yes, it has six components as we hoped (changed from the original code)
+            if (d.length == 5) { // Yes, it has three components as we hoped
                 handleCommand({
-                    //text:d[0].substr(1),
-                    button1: parseFloat(d[2]),
-                    button2: parseFloat(d[3]),
-                    button3: parseFloat(d[4]),
-                    button4: parseFloat(d[5])
+                    text:d[0].substr(1),
+                    button1: parseInt(d[1]),
+                    button2: parseFloat(d[2]),
+                    button3: parseFloat(d[3]),
+                    button4: parseFloat(d[4])
                 });
 //                var buttonValue = parseInt(d[2]);
 //                float: parseFloat(d[2].substr(0,d.length-1))

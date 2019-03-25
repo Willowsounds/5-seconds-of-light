@@ -1,1 +1,3 @@
-This prototype uses serial bridge to get values from the physical potentiometer to change the colours in the browser window. 
+Hello
+
+![alt text](https://i.gyazo.com/89fef846d07a2a6261843741916304ef.png)
