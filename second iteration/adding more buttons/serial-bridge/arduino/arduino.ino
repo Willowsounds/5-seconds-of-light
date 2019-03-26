@@ -11,10 +11,17 @@ float floatFromPC = 0.0;
 boolean newData = false;
 long lastFakeReport = 0;
 
+
+Button buttonPinA(D2);
+Button buttonPinB(D3);
+Button buttonPinC(D4);
+Button buttonPinD(D5);
+/*
 const int buttonPinA = 2;
 const int buttonPinB = 3;
 const int buttonPinC = 4;
 const int buttonPinD = 5;
+*/
 int analogPinA0 = A0;
 int sensorValue = 0;
 int sensorValue2 = 0;
@@ -32,13 +39,14 @@ enum {
 
 void setup()  {
  Serial.begin(115200);
- pinMode( buttonPinA, INPUT);
+/* pinMode( buttonPinA, INPUT);
  pinMode( buttonPinB, INPUT);
  pinMode( buttonPinC, INPUT);
  pinMode( buttonPinD, INPUT);
- pinMode( analogPinA0, INPUT);
+ */
+ //pinMode( analogPinA0, INPUT);
  report(MsgAcknowledge, "Ready");
-} 
+}
 
 void loop() {
   // Process serial communucation
@@ -58,7 +66,7 @@ void loop() {
         report(MsgMoveResult, 10);
         break;
       }
-      
+
       // Debug: print parsed command to serial
       // showParsedData();
       newData = false;
@@ -67,21 +75,51 @@ void loop() {
 
   // Every so often report a fake position
   if (millis() - lastFakeReport > 100) {
-    sensorValue = analogRead(analogPinA0);
+    //sensorValue = analogRead(analogPinA0);
 
+    if(buttonPinA.pressed())
+      sensorValue = 1;
+    if(buttonPinA.held())
+      sensorValue = 1;
+    if(buttonPinA.released()) {
+      sensorValue = 0;
+    }
+    if(buttonPinB.pressed())
+      sensorValue2 = 1;
+    if(buttonPinB.held())
+      sensorValue2 = 1;
+    if(buttonPinB.released()) {
+      sensorValue2 = 0;
+    }
+    if(buttonPinC.pressed())
+      sensorValue3 = 1;
+    if(buttonPinC.held())
+      sensorValue3 = 1;
+    if(buttonPinC.released()) {
+      sensorValue3 = 0;
+    }
+    if(buttonPinD.pressed())
+      sensorValue4 = 1;
+    if(buttonPinD.held())
+      sensorValue4 = 1;
+    if(buttonPinD.released()) {
+      sensorValue4 = 0;
+    }
+
+    /*
     //if we want to read values from buttons
     sensorValue = digitalRead(buttonPinA);
     sensorValue2 = digitalRead(buttonPinB);
     sensorValue3 = digitalRead(buttonPinC);
     sensorValue4 = digitalRead(buttonPinD);
+*/
 
 
-    
     report(MsgPosition, sensorValue, sensorValue2, sensorValue3, sensorValue4);
     //console.log(sensorValue);
 //    report(MsgPosition, (random(0,100)));
     lastFakeReport = millis();
-        
+
   }
 }
 
@@ -112,7 +150,7 @@ void report(int code, int val1, int val2, int val3, int val4) {
   Serial.print(",");
   Serial.print(val4);
 
-  
+
   Serial.print(">\r\n");
   Serial.flush();
 }
@@ -154,7 +192,7 @@ void parseData() {      // split the data into its parts
 
     strtokIndx = strtok(tempChars,",");      // get the first part - the string
     strcpy(messageFromPC, strtokIndx); // copy it to messageFromPC
- 
+
     strtokIndx = strtok(NULL, ","); // this continues where the previous call left off
     integerFromPC = atoi(strtokIndx);     // convert this part to an integer
 
