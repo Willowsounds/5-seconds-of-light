@@ -18,7 +18,7 @@ function handleCommand(d) {
     /*Colors in hex
     #ffff96
     #ffffba
-    #ffffdf
+    #ffffdd
     #ffffff
     */
 
@@ -38,13 +38,13 @@ function handleCommand(d) {
     if (b_three === 1){
       document.getElementById("div_one").style.backgroundColor = '#ffff96';
       document.getElementById("div_two").style.backgroundColor = '#ffffba';
-      document.getElementById("div_three").style.backgroundColor = '#fffffd';
+      document.getElementById("div_three").style.backgroundColor = '#ffffdd';
       document.getElementById("div_four").style.backgroundColor = '#000000';
     }
     if (b_four === 1){
       document.getElementById("div_one").style.backgroundColor = '#ffff96';
       document.getElementById("div_two").style.backgroundColor = '#ffffba';
-      document.getElementById("div_three").style.backgroundColor = '#fffffd';
+      document.getElementById("div_three").style.backgroundColor = '#ffffdd';
       document.getElementById("div_four").style.backgroundColor = '#ffffff';
     }
 }
