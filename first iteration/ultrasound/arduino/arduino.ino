@@ -1,7 +1,7 @@
 // Serial I/O based on example http://forum.arduino.cc/index.php?topic=396450
 // Ultra sound sensor code based on 
-// example http://www.f15ijp.com/2012/09/arduino-ultrasonic-sensor-hc-sr04-or-hy-srf05/
-// and https://create.arduino.cc/projecthub/rztronics/ultrasonic-range-detector-using-arduino-and-sr-04f-8a804d
+// http://www.f15ijp.com/2012/09/arduino-ultrasonic-sensor-hc-sr04-or-hy-srf05/
+// https://create.arduino.cc/projecthub/rztronics/ultrasonic-range-detector-using-arduino-and-sr-04f-8a804d
 
 
 
