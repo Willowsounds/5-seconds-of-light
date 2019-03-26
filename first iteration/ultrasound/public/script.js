@@ -4,11 +4,13 @@ else document.addEventListener('DOMContentLoaded', onDocumentReady);
 function handleCommand(d) {
     // We get a value between 3 nd 400, which is the measured distance in cm
     let distance = parseInt(d.float);
+    if ( (10 < distance) && (distance < 60) ) {
+        let range = 150 + Math.min((distance-10)*2, 105);
+        let hexBlue = range.toString(16);
+        let hex = "#ffff"+ addzero(hexBlue);
+        document.body.style.backgroundColor = hex;
+    }
     // Use the range up to 105 cm for the color change
-    let range = 150 + Math.min(distance,105);
-    let hexBlue = range.toString(16);
-    let hex = "#ffff"+ addzero(hexBlue);
-    document.body.style.backgroundColor = hex;
     document.body.innerHTML = d.float;
 }
 
