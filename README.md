@@ -11,6 +11,7 @@ The project is exploring different interactions that users can experience in a c
 **First iteration folders content:**
 - potentiometer sketches use serial brigde and they were used in two physical prototypes: the potentiometer knob and the slider (Dressing from dawn till dusk concept);
 - four buttons sketches use arduino and html, they were used in: laser cut buttons and floor pedals (Four weddings and a funeral & Twister in the changing room concepts);
+
 **Prototypes sub-folder worth mentioning** 
 - warm cold slider: digital sketch and prototype that uses touch screen;
 - warm cold slider with motionstream: changes the backgroundcolor between 4 stages of warm to cold light depending on the horizontal orientation of the connected mobile device;
