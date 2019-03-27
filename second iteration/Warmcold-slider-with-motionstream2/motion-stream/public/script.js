@@ -22,15 +22,37 @@ function onData(e) {
 
 //changes the backgroundcolor in the browser depending on the value of the horizontal rotation of the phone (event.accelgrav.x).
 //between 5-10 is one color, 0-5 is another, -5-0 and -5-10.
-  if (accelGrav.x > 5 && accelGrav.x < 10){
-    document.body.style.backgroundColor = '#ffffff';
-  } else if (accelGrav.x < 5 && accelGrav.x > 0){
-    document.body.style.backgroundColor = '#ffffdf';
-  } else if (accelGrav.x < 0 && accelGrav.x > -5){
-    document.body.style.backgroundColor = '#ffffba';
-  } else if (accelGrav.x < -5 && accelGrav.x > -10){
-    document.body.style.backgroundColor = '#ffff96';
-  }
+  // if (accelGrav.x > 5 && accelGrav.x < 10){
+  //   document.body.style.backgroundColor = '#ffffff';
+  // } else if (accelGrav.x < 5 && accelGrav.x > 0){
+  //   document.body.style.backgroundColor = '#ffffdf';
+  // } else if (accelGrav.x < 0 && accelGrav.x > -5){
+  //   document.body.style.backgroundColor = '#ffffba';
+  // } else if (accelGrav.x < -5 && accelGrav.x > -10){
+  //   document.body.style.backgroundColor = '#ffff96';
+  // }
+
+  if (accelGrav.x < -5 && accelGrav.x>-10){
+   setColor = 30;
+ } else if(accelGrav.x> -5 && accelGrav.x<0){
+   setColor = 50;
+ } else if (accelGrav.x >0 && accelGrav.x <5){
+   setColor = 80;
+ } else if(accelGrav.x >5 && accelGrav.x <10){
+   setColor = 100;
+ }
+ if (accelGrav.y < -5 && accelGrav.y > -10){
+   setBrightness = 30;
+ } else if(accelGrav.y> -5 && accelGrav.y<0){
+   setBrightness = 50;
+ } else if(accelGrav.y> 0 && accelGrav.y<5){
+   setBrightness = 80;
+ } else if(accelGrav.y> 5 && accelGrav.y<10){
+   setBrightness = 100;
+ }
+ function changeBackground(setColor,setBrightness){
+   document.body.style.backgroundColor = `hsl(47, $(setColor)%, $(setBrightness)%)`;
+
 }
 
 function initWebsocket() {
