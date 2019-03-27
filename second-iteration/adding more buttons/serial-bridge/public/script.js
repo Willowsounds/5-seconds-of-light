@@ -9,20 +9,20 @@ else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
 
-    //Handle the values from the serial.
+    //Handle the values from the serial (Group 5)
     let b_one = parseInt(d.button1);
     let b_two = parseInt(d.button2);
     let b_three = parseInt(d.button3);
     let b_four = parseInt(d.button4);
 
-    /*Colors in hex
+    /*Colors in hex (Group 5)
     #ffff96
     #ffffba
     #ffffdd
     #ffffff
     */
 
-    // Depending on which button is pressed (1,2,3 or 4) the different div's will change colors...
+    // Depending on which button is pressed (1,2,3 or 4) the different div's will change colors...(Group 5)
     if (b_one === 1){
       document.getElementById("div_one").style.backgroundColor = '#ffff96';
       document.getElementById("div_two").style.backgroundColor = '#000000';
@@ -60,7 +60,7 @@ function onDocumentReady() {
         //console.log(evt.data);
 
         // Parse message, assuming <Text,Int,Float> [Changed to (see below)]
-        //Parse message, now it is assuming <Text,Float,Float,Float,Float,Float>
+        //Parse message, now it is assuming <Text,Float,Float,Float,Float,Float> (Group 5)
         var d = evt.data.trim();
         if (d.charAt(0) == '<' && d.charAt(d.length-1) == '>') {
             //${
@@ -68,6 +68,7 @@ function onDocumentReady() {
             d = d.split(',');
             if (d.length == 6) { // Yes, it has six components as we hoped
                 handleCommand({
+                  //Changed this part so it reads the state of the buttons,when they are pressed (1) and not pressed(0)
                     button1: parseFloat(d[2]),
                     button2: parseFloat(d[3]),
                     button3: parseFloat(d[4]),
