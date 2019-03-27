@@ -1,0 +1,67 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  overflow: hidden;
+  font-family: 'Sniglet', cursive;
+}
+body {
+  background-color: whitesmoke;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+h1 {
+  color: darkred;
+}
+a, a:link, a:visited {
+  color: darkred;
+}
+a:hover {
+  color: black;
+}
+#last>table {
+  border: 1px solid gray;
+  width: 100%;
+}
+#last td {
+  width: 3rem;
+}
+#last.frozen {
+  background-color: lightblue;
+}
+#log .error {
+  color: red;
+}
+
+
+/*red and green slider is needed for javascript but is not displayed in the browser*/
+#green, #red {
+  display: none;
+}
+
+/*Slider box size, color and transparancy*/
+#blue {
+  width: 50%;
+  height: 45px;
+  background: #d3d3d3;
+  opacity: 0.6;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/*Slider "handle" size and color*/
+#blue::-moz-range-thumb {
+  width: 45px;
+  height: 45px;
+  background: #4CAF50;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/*Center the slider and move it 50px from top*/
+body{
+  text-align: center;
+  padding: 50px 0 0 0;
+}
