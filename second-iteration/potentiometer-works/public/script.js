@@ -2,10 +2,8 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 function handleCommand(d) {
-
-
-
-
+  /*Returns an integer and converts it to a string with a hexadecimal value.
+  150+rage makes it so that the blue value starts at 150.*/
     let percent = parseInt(d.float/10);
     let range = 150 + percent;
     let hexBlue = range.toString(16);
@@ -14,6 +12,9 @@ function handleCommand(d) {
     document.body.innerHTML = hex;
 }
 
+/*If the lenght of the returned hexadecimal value is below 2, an extra "0" is added infront
+beacuse a hexadecimal colorvalue is always # followed by 6 letters/numbers.
+without the function below, RGB (12,12,12) would return #CCC instead of the correct #0C0C0C*/
 function addzero(n){
   return (n.length<2) ? "0"+n : n;
 }
