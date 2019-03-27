@@ -1,11 +1,13 @@
-# changes
+# Changes
 
-Added functionality that changes the backgroundcolor
+Added functionality that changes the background color
 between 4 stages of warm to cold light depending on
-the horizontal orientation of the connected mobile
+the roll orientation of the connected mobile
 device.
 
-# motion-stream
+We also added functionality that changes the background color intensity from low to high in 4 stages depending on the  pitch orientation of the connected mobile device. 
+
+# Motion-stream
 
 This example streams motion and orientation data from a mobile device via websockets to a server. From there, the server distributes it to every connected client.
 
