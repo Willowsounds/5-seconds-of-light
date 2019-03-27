@@ -1,5 +1,7 @@
 var socket = null;
 var frozen = false;
+let setColor;
+let setBrightness;
 
 if (document.readyState != 'loading') ready();
 else document.addEventListener('DOMContentLoaded', ready);
@@ -14,46 +16,69 @@ function ready() {
   initWebsocket();
 }
 
+
+function average(values) {
+  let sum = 0;
+  for( let i = 0; i < values.length; i++) {
+    sum = sum + values[i];
+  }
+  // console.log("sum " + sum);
+  return sum/values.length;
+}
+
 function onData(e) {
   var accel = e.accel;
   var accelGrav = e.accelGrav;
   var rot = e.rot;
   if (!frozen) showData(e);
 
-//changes the backgroundcolor in the browser depending on the value of the horizontal rotation of the phone (event.accelgrav.x).
-//between 5-10 is one color, 0-5 is another, -5-0 and -5-10.
-  // if (accelGrav.x > 5 && accelGrav.x < 10){
-  //   document.body.style.backgroundColor = '#ffffff';
-  // } else if (accelGrav.x < 5 && accelGrav.x > 0){
-  //   document.body.style.backgroundColor = '#ffffdf';
-  // } else if (accelGrav.x < 0 && accelGrav.x > -5){
-  //   document.body.style.backgroundColor = '#ffffba';
-  // } else if (accelGrav.x < -5 && accelGrav.x > -10){
-  //   document.body.style.backgroundColor = '#ffff96';
-  // }
 
-  if (accelGrav.x < -5 && accelGrav.x>-10){
-   setColor = 30;
- } else if(accelGrav.x> -5 && accelGrav.x<0){
-   setColor = 50;
- } else if (accelGrav.x >0 && accelGrav.x <5){
+let xInputValues = [];
+let yInputValues = [];
+
+xInputValues.push(accelGrav.x);
+yInputValues.push(accelGrav.y);
+
+
+let xAverage = average(xInputValues);
+let yAverage = average(yInputValues);
+
+// console.log("X avg" + xAverage );
+// console.log("Y avg" + yAverage );
+
+  if (xAverage < -5 && xAverage>-10){
+   setColor = 70;
+ } else if(xAverage> -5 && xAverage<0){
    setColor = 80;
- } else if(accelGrav.x >5 && accelGrav.x <10){
+ } else if (xAverage >0 && xAverage <5){
+   setColor = 90;
+ } else if(xAverage >5 && xAverage <10){
    setColor = 100;
  }
- if (accelGrav.y < -5 && accelGrav.y > -10){
-   setBrightness = 30;
- } else if(accelGrav.y> -5 && accelGrav.y<0){
+ if (yAverage < -5 && yAverage > -10){
    setBrightness = 50;
- } else if(accelGrav.y> 0 && accelGrav.y<5){
+ } else if(yAverage> -5 && yAverage<0){
+   setBrightness = 65;
+ } else if(yAverage> 0 && yAverage<5){
    setBrightness = 80;
- } else if(accelGrav.y> 5 && accelGrav.y<10){
+ } else if(yAverage> 5 && yAverage<10){
    setBrightness = 100;
  }
+
+ if (xInputValues.length > 10) {
+   xInputValues.shift();
+ }
+ if (yInputValues.length > 10) {
+   yInputValues.shift();
+ }
+ changeBackground(setColor,setBrightness);
+}
+
  function changeBackground(setColor,setBrightness){
-   document.body.style.backgroundColor = `hsl(47, $(setColor)%, $(setBrightness)%)`;
+   document.body.style.backgroundColor = `hsl(49, ${setColor}%, ${setBrightness}%)`;
 
 }
+
 
 function initWebsocket() {
   const url = 'ws://' + location.host + '/ws';
