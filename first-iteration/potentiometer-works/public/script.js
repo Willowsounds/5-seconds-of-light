@@ -1,3 +1,12 @@
+/*
+ * Group 3: We added functionality to receive color data. The color data is
+ * used to set the background color of the page
+ *
+ * Color calculation is based on https://www.energyearth.com/general/categories/lighting/learn-more
+ *
+ */
+
+
 var lastMsgEl = null;
 
 const WARM_WHITE = {r:255,g:248,b:168,k:2700};
@@ -8,9 +17,8 @@ if (document.readyState != 'loading') onDocumentReady();
 else document.addEventListener('DOMContentLoaded', onDocumentReady);
 
 
-
 function handleCommand(d) {
-   //lastMsgEl.innerHTML =  `text: ${d.text} <br />int: ${d.integer} <br />float: ${d.float}`;
+    //lastMsgEl.innerHTML =  `text: ${d.text} <br />int: ${d.integer} <br />float: ${d.float}`;
     let wholePageEl = document.getElementById("wholePage");
     //console.log("d float " + d.float + '\n');
 
@@ -25,11 +33,9 @@ function handleCommand(d) {
 
     lastMsgEl.innerHTML =  `percent: ${Math.trunc(percent)} <br>color rgb:  ${color.r} ${color.g} ${color.b}
                             <br>color2 rgb: ${colorDampened.r} ${colorDampened.g} ${colorDampened.b}`;
-    //console.log("percent: " + percent);
-    //console.log("color temperature: " + colorTemperature);
-    //console.log("color rgb: " + color.r + " " + color.g + " " + color.b);
 }
 
+// Truncate the decimals
 function colorTruncate(color) {
     return {
         r: Math.trunc(color.r),
@@ -38,6 +44,7 @@ function colorTruncate(color) {
     }
 }
 
+// Change the intensity of the color
 function calculateIntensity(color, percent) {
     return {
         r: Math.min(percent/100*color.r, 255),
@@ -46,12 +53,18 @@ function calculateIntensity(color, percent) {
     }
 }
 
+/*
+ * Calculate an interpolated value based on the percentage value and numbers from the web page
+ * https://www.energyearth.com/general/categories/lighting/learn-more
+ */
 function calculateColorTemperature( percent ) {
     return (percent / 100 ) * (DAYLIGHT.k - WARM_WHITE.k) + WARM_WHITE.k;
 }
 
+/*
+ * Calculate the color value from the color temperature.
+ */
 function calculateRGB(colorTemp) {
-    // Color calculation is based on https://www.energyearth.com/general/categories/lighting/learn-more
     let red, green, blue;
     if (colorTemp < COOL_WHITE.k) {
         red = WARM_WHITE.r;
@@ -75,12 +88,9 @@ function onDocumentReady() {
         // Debug: see raw received message
         //console.log(evt.data);
 
-        //document.getElementById( "wholePage" ).style.backgroundColor = 'rgba(255,130,100,${d';
-
         // Parse message, assuming <Text,Int,Float>
         var d = evt.data.trim();
         if (d.charAt(0) == '<' && d.charAt(d.length-1) == '>') {
-            //${
             // Looks legit
             d = d.split(',');
             if (d.length == 3) { // Yes, it has three components as we hoped
@@ -89,10 +99,6 @@ function onDocumentReady() {
                     integer: parseInt(d[1]),
                     float: parseFloat(d[2])
                 });
-//                var buttonValue = parseInt(d[2]);
-//                float: parseFloat(d[2].substr(0,d.length-1))
-//                document.getElementById( "wholePage" ).style.backgroundColor = `rgba(255,130,100,${buttonValue})`;
-//                console.log(buttonValue);
                 return;
             }
         }
@@ -107,11 +113,4 @@ function onDocumentReady() {
         console.log("Socket opened");
     }
 
-    /*
-    sendFormEl.addEventListener('submit', function(evt) {
-        evt.preventDefault();
-        var send = document.getElementById('sendtoSerial').value;
-        socket.send(send);
-    })
-    */
 }
